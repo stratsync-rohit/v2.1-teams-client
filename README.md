@@ -18,7 +18,9 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open the local URL printed by the development server.
+Open the local Next.js URL printed by the development server (normally
+`http://localhost:3000`). The previous Cloudflare/Vinext development workflow
+remains available with `npm run dev:vinext` when needed.
 
 ## Environment
 
@@ -53,7 +55,7 @@ For local real integration, configure the backend (not the browser) with the rea
 ```env
 APP_ENV=development
 DEV_TENANT_ID=<real development Teams tenant>
-CORS_ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
+CORS_ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
 ```
 
 Keep the existing Microsoft and MongoDB settings private in the backend `.env`. Start the backend from `enterprise-risk-bot`:
@@ -69,7 +71,7 @@ Keep ngrok running against port 3978 so the configured Bot Framework messaging e
 npm run dev
 ```
 
-Open the Vite URL printed by the development server (normally `http://localhost:5173`).
+Open the Next.js URL printed by the development server (normally `http://localhost:3000`).
 
 ## Manual Microsoft Teams E2E check
 

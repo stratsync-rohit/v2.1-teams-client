@@ -15,7 +15,7 @@ export function getInstallationDisplayName(installation: Installation): string {
   return nonEmpty(installation.team_name) ?? installation.team_id;
 }
 
-export function getChannelDisplayName(channel: Pick<DiscoveredChannel, "channel_id" | "channel_name" | "display_name"> & { destination_id?: string }): string {
+export function getChannelDisplayName(channel: Pick<DiscoveredChannel, "channel_id" | "channel_name" | "display_name"> & { destination_id?: string | null }): string {
   return nonEmpty(channel.display_name) ?? nonEmpty(channel.channel_name) ?? (channel.destination_id ? "Teams channel" : channel.channel_id);
 }
 
